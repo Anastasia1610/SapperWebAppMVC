@@ -11,6 +11,11 @@ namespace Sapper.Controllers
 
         public IActionResult Saper(int width, int height, int bombs)
         {
+            if(width <= 0 || height <= 0 || bombs > width*height)
+            {
+                return View(null);
+            }
+
             List<List<string>> list = new List<List<string>>();
 
             //Заполнение поля 
