@@ -1,0 +1,29 @@
+﻿@model List<List<string>>
+@{
+    ViewData["Title"] = "Saper";
+}
+
+<h1>Saper</h1>
+
+@for (int i = 0; i < Model.Count(); i++)
+{
+    <div>
+    @for (int j = 0; j < Model[i].Count(); j++)
+    {
+        if (Model[i][j] == "#")
+        {
+            <div style="display:inline-block; border:solid; border-width:thin; margin: 2px; padding: 5px; background-color: red">@Model[i][j]</div>
+        }
+        else if (Model[i][j] != "0")
+        {
+            <div style="display:inline-block; border:solid; border-width:thin; margin: 2px; padding: 5px; background-color: white">@Model[i][j]</div>
+        }
+        else
+        {
+            <div style="display:inline-block; border:solid; border-width:thin; margin: 2px; padding: 5px; background-color:gainsboro">@Model[i][j]</div>
+        }
+       
+    }
+    </div>
+}
+
